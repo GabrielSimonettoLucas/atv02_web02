@@ -1,0 +1,12 @@
+<form action="/post-excluir-ouvintes" method="post">
+    <h1>Excluir OUVINTE</h1>
+    <input type="hidden" name="id" value="{{ouvinte.ra}}">
+    <p>RA:</p>
+    <input type="text" name="ra" value="{{ouvinte.ra}}" disabled> <br>
+    <p>Nome:</p> 
+    <input accept="false" type="text" name="nome" value="{{ouvinte.nome}}" disabled>
+    <br><br>
+    <p>Tem certeza que deseja excluir o ouvinte?</p>
+    <input type="submit" value="Excluir">
+    <a href="/listar-ouvintes"><input type="button" value="Cancelar"></a>
+</form>

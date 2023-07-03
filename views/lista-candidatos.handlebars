@@ -1,0 +1,20 @@
+<div class="lista">
+    <h1>Lista de CANDIDATOS</h1>
+    <table border="10px">
+        <tr>
+            <td><b> RA </b></td>
+            <td><b> Nome </b></td>
+            <td><b> Editar </b></td>
+            <td><b> Excluir </b></td>
+        </tr>
+        {{#each candidato}}
+        <tr>
+            <td>{{ra}}</td>
+            <td>{{nome}}</td>
+            <td><a href="editarCandidato/{{ra}}">Editar</a></td>
+            <td><a href="excluirCandidato/{{ra}}">Excluir</a></td>
+        </tr>
+        {{/each}}
+    </table>
+    <br><br><br><br>
+</div>

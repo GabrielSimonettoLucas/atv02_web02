@@ -1,0 +1,36 @@
+<div class="lista">
+    <h1>Lista de TODAS AS APRESENTAÇÕES</h1>
+    <table border="10px">
+        <tr>
+            <td><b> RA do criador </b></td>
+            <td><b> Nome do criador </b></td>
+            <td><b> Participante 1 </b></td>
+            <td><b> Participante 2 </b></td>
+            <td><b> Participante 3 </b></td>
+            <td><b> Participante 4 </b></td>
+            <td><b> Participante 5 </b></td>
+            <td><b> Participante 6 </b></td>
+            <td><b> Musica </b></td>
+            <td><b> Votos </b></td>
+            <td><b> Editar </b></td>
+            <td><b> Excluir </b></td>
+        </tr>
+        {{#each apresentacao}}
+        <tr>
+            <td>{{ra_criador}}</td>
+            <td>{{nome_criador}}</td>
+            <td>{{participante1}}</td>
+            <td>{{participante2}}</td>
+            <td>{{participante3}}</td>
+            <td>{{participante4}}</td>
+            <td>{{participante5}}</td>
+            <td>{{participante6}}</td>
+            <td>{{musica}}</td>
+            <td>{{votos}}</td>
+            <td><a href="/editarApresentacao/{{id}}">Editar</a></td>
+            <td><a href="/excluirApresentacao/{{id}}">Excluir</a></td>
+        </tr>
+        {{/each}}
+    </table>
+    <br><br><br><br>
+</div>

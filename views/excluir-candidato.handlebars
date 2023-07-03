@@ -1,0 +1,13 @@
+
+<form action="/post-excluir-candidatos" method="post">
+    <h1>Excluir CANDIDATO</h1>
+    <input type="hidden" name="id" value="{{candidato.ra}}">
+    <p>RA:</p>
+    <input type="text" name="ra" value="{{candidato.ra}}" disabled> <br>
+    <p>Nome:</p> 
+    <input accept="false" type="text" name="nome" value="{{candidato.nome}}" disabled>
+    <br><br>
+    <p>Tem certeza que deseja excluir o candidato?</p>
+    <input type="submit" value="Excluir">
+    <a href="/listar-candidatos"><input type="button" value="Cancelar"></a>
+</form>
