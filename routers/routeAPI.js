@@ -15,7 +15,6 @@ route.post("/validar-responsavelA", controller.getValidarresponsavel);
 route.post("/validar-admA", controller.getValidaradm);
 
 route.get("/candidatoA/:cpf", controller.getCandidatomenu);
-
 route.get("/responsavelA/:cpf", controller.getResponsavelmenu);
 route.get("/admA/:id", controller.getAdmmenu);
 

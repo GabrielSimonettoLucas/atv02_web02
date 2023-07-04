@@ -21,8 +21,8 @@ module.exports = {
     },
 
     async getValidarcandidato(req,res){  //<====== apizado
-        var pessoas= await db.Candidato.findOne({where: {cpf: req.body.cpf}});
-        //var pessoas = await unirest.get('http://localhost:8000/validar-candidatoaA')
+        //var pessoas= await db.Candidato.findOne({where: {cpf: req.body.cpf}});
+        var pessoas = await unirest.get('http://localhost:8000/validar-candidatoaA')
         if (pessoas === null){
             res.redirect('/logar-candidato');
         }else{
@@ -30,8 +30,8 @@ module.exports = {
         }
     },
     async getValidarresponsavel(req,res){ //<====== apizado
-        var pessoas = await db.Responsavel.findOne({where: {cpf: req.body.cpf}});
-        //var pessoas = await unirest.get('http://localhost:8000/validar-responsavelA')
+        //var pessoas = await db.Responsavel.findOne({where: {cpf: req.body.cpf}});
+        var pessoas = await unirest.get('http://localhost:8000/validar-responsavelA')
         console.log("=============passou aqui" + req.body.cpf)
         if (pessoas === null){
             res.redirect('/logar-responsavel');
@@ -40,8 +40,8 @@ module.exports = {
         }
     },
     async getValidaradm(req,res){  //<== Alterado
-        var pessoas = await db.Adm.findOne({where: {id: req.body.id}});
-        //var pessoas = await unirest.get('http://localhost:8000/validar-admA')
+        //var pessoas = await db.Adm.findOne({where: {id: req.body.id}});
+        var pessoas = await unirest.get('http://localhost:8000/validar-admA')
         console.log("aqui")
         if (pessoas === null){
             res.redirect('/logar-adm');
@@ -50,37 +50,43 @@ module.exports = {
         }
     },
     async getCandidatomenu(req,res){
-        db.Candidato.findOne({where: {cpf: req.params.cpf}}).then((candidato) => {
+        //db.Candidato.findOne({where: {cpf: req.params.cpf}})
+        var temp = await unirest.get('http://localhost:8000/candidatoA/:cpf')
             res.render('menu-candidato', {candidato: candidato.toJSON()});
-        });
+
     },
     async getResponsavelmenu(req,res){
-        db.Responsavel.findOne({where: {cpf: req.params.cpf}}).then((responsavel) => {
+        var temp = await unirest.get('http://localhost:8000/responsavelA/:cpf')
+        db.Responsavel.findOne({where: {cpf: req.params.cpf}})
             res.render('menu-responsavel', {responsavel: responsavel.toJSON()});
-        });
+
     },
     async getAdmmenu(req,res){
         res.render('menu-adm');
     },
     async getListcandidatos(req,res){  //<=== certo a principio
+        var temp = await unirest.get('http://localhost:8000/candidatoA/:cpf')
         db.Candidato.findAll().then((candidato) => {
             res.render('lista-candidatos', {candidato: candidato.map(candidato => candidato.toJSON())});
         });
     },
 
     async getListmeusprojetos(req,res){
+        var temp = await unirest.get('http://localhost:8000/listar-projetosA/:cpf')
         db.Projeto.findAll({where: {cpf_criador: req.params.cpf}}).then((projetos) => {
             res.render('lista-meus-projetos', {projetos: projetos.map(projetos => projetos.toJSON())});
         });
     },
 
     async getListtodosprojetos(req,res){
+        var temp = await unirest.get('http://localhost:8000/listar-todos-projetosA/:cpf')
         db.Projeto.findAll().then((projetos) => {
             res.render('lista-todos-projetos', {projetos: projetos.map(projetos => projetos.toJSON())});
         });
     },
 
     async getEditarcandidato(req, res){  //<=== editado a principio
+        var temp = await unirest.get('http://localhost:8000/editarCandidatoA/:id')
         db.Candidato.findOne({where: {id: req.params.id}}).then((candidato) => {
             res.render('editar-candidatos', {candidato: candidato.toJSON()});
         });
@@ -89,6 +95,7 @@ module.exports = {
     },
 
     async getEditarresponsavel(req, res){  //<=== editado a principio
+        var temp = await unirest.get('http://localhost:8000/editarCandidatoA/:id')
         db.Responsavel.findOne({where: {id: req.params.id}}).then((responsavel) => {
             res.render('editar-responsavel', {responsavel: responsavel.toJSON()});
         });
@@ -97,36 +104,42 @@ module.exports = {
     },
 
     async getListresponsavel(req,res){  //<=== certo a principio
+        var temp = await unirest.get('http://localhost:8000/listar-responsavelA')
         db.Responsavel.findAll().then((responsavel) => {
             res.render('lista-responsavel', {responsavel: responsavel.map(responsavel => responsavel.toJSON())});
         });
     },
 
     async getEditarmeuprojeto(req, res){
+        var temp = await unirest.get('http://localhost:8000/editarMeuprojetoA/:id')
         db.Projeto.findOne({where: {id: req.params.id}}).then((projeto) => {
             res.render('editar-meu-projeto', {projeto: projeto.toJSON()});
         });
     },
 
     async getExcluircandidato(req, res){ //<=== editado
+        var temp = await unirest.get('http://localhost:8000/excluirCandidatoA/:id')
         db.Candidato.findOne({where: {id: req.params.id}}).then((candidato) => {
             res.render('excluir-candidato', {candidato: candidato.toJSON()});
         });
     },
 
     async getExcluirResponsavel(req, res){ //<=== editado
+        var temp = await unirest.get('http://localhost:8000/excluirResponsavelA/:id')
         db.Responsavel.findOne({where: {id: req.params.id}}).then((responsavel) => {
             res.render('excluir-responsavel', {responsavel: responsavel.toJSON()});
         });
     },
 
     async getExcluirmeuprojeto(req, res){
+        var temp = await unirest.get('http://localhost:8000/excluirMeuprojetoA/:id')
         db.Projeto.findOne({where: {id: req.params.id}}).then((projeto) => {
             res.render('excluir-meu-projeto', {projeto: projeto.toJSON()});
         });
     },
 
     async postExcluircandidato(req, res){ //<=== editado
+        var temp = await unirest.get('http://localhost:8000//excluirCandidatoA/:id')
         await db.Candidato.destroy({
             where: {id: req.body.id},
         });
@@ -134,6 +147,7 @@ module.exports = {
     },
 
     async postExcluirresponsavel(req, res){ //<=== editado
+        var temp = await unirest.get('http://localhost:8000//excluirResponsavelA/:id')
         await db.Responsavel.destroy({
             where: {id: req.body.id},
         });
@@ -141,6 +155,7 @@ module.exports = {
     },
 
     async postExcluirmeuprojeto(req, res){ 
+        var temp = await unirest.get('http://localhost:8000//excluirMeuprojeto/:id')
         var temp = await db.Projeto.findOne({where: {id: req.body.id}});
         var racriador = temp.cpf_criador;
         await db.Projeto.destroy({
@@ -150,6 +165,7 @@ module.exports = {
     },
 
     async postEditcandidato(req, res) { //<=== editado
+        var temp = await unirest.get('http://localhost:8000//editCa/:id')
         var candidato = await db.Candidato.findOne({where: {id: req.body.id}});
         if (candidato) {
             candidato.cpf = req.body.cpf;
@@ -162,6 +178,7 @@ module.exports = {
     },
 
     async postEditresponsavel(req, res) { //<=== editado
+        var temp = await unirest.get('http://localhost:8000//editResponsavel/:id')
         var responsavel = await db.Responsavel.findOne({where: {id: req.body.id}});
         if (responsavel) {
             responsavel.cpf = req.body.cpf;
@@ -174,6 +191,7 @@ module.exports = {
     },
 
     async postEditarmeuprojeto(req,res){
+        var temp = await unirest.get('http://localhost:8000//editMeuprojeto/:id')
         var projeto = await db.Projeto.findOne({where: {id: req.body.id}});
         console.log("PASSOU POR AQUI")
         console.log(projeto)
@@ -198,12 +216,14 @@ module.exports = {
     },
 
     async getCadastrarprojetos (req,res){ //<=== novo
+        var temp = await unirest.get('http://localhost:8000//getCadastrarprojetos/:id')
         db.Responsavel.findOne({where: {cpf: req.params.cpf}}).then((responsavel) => {
             res.render('cadastrar-projetos', {responsavel: responsavel.toJSON()});
         });
     },
 
     async postCadastrarcandidato(req, res){  //<=== novo
+        var temp = await unirest.get('http://localhost:8000//getCadastrarcandidato/:id')
         db.Candidato.create({
             cpf: req.body.cpf,
             nome: req.body.nome,
@@ -216,6 +236,7 @@ module.exports = {
     },
 
     async postCadastrarresponsavel(req, res){  //<=== novo
+        var temp = await unirest.get('http://localhost:8000//getCadastrarresponsavel/:id')
         db.Responsavel.create({
             cpf: req.body.cpf,
             nome: req.body.nome,
@@ -226,6 +247,7 @@ module.exports = {
     },
 
     async postCadastrarprojeto(req, res){  //<=== novo
+        var temp = await unirest.get('http://localhost:8000//getCadastrarprojeto/:id')
         db.Projeto.create({
             cpf_criador: req.body.cpf_c,
             nome_criador: req.body.nome_c,
