@@ -6,6 +6,16 @@ const express = require('express');
 const app = express();
 const routes = require('./routers/route');
 const handlebars = require('express-handlebars');
+const swaggerUI = require('swagger-ui-express');
+
+app.use(express.static(path.join(__dirname, 'public')));
+const swaggerDocument = require('./swagger.json');
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.use("/api-docs",swaggerUI.serve, swaggerUI.setup(swaggerDocument))
+app.use(routes);
+
 app.engine('handlebars', handlebars.engine({defaultLayout:'main'}))
 app.set('view engine', 'handlebars');
 app.use(

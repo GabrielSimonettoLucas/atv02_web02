@@ -1,0 +1,804 @@
+{
+    "openapi": "3.0.3",
+    "in fo": {
+        "title": "API-Projetos",
+        "description": "Essa API fornece recursos para gerir um sistema de projetos",
+        "contact": {
+            "name": "Gabriel Antonio Simonetto Lucas",
+            "email": "gasl2801@gmail.com"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8000/",
+            "description": "rota para API"
+        }
+    ],
+    "paths": {
+        "/validar-candidatoA": {
+            "post": {
+                "summary": "Validar cancidato",
+                "description": "Verifica se existe uma entrada no id definido",
+                "tags": [
+                    "Login candidato"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Validar"
+                            },
+                            "examples": {
+                                "validar": {
+                                    "value": {
+                                        "nome": "true"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "sucess",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses1": {
+                    "204": {
+                        "description": "not-found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/validar-responsavelA": {
+            "post": {
+                "summary": "Validar responsavel",
+                "description": "Verifica se existe uma entrada no id definido",
+                "tags": [
+                    "Login"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Validar"
+                            },
+                            "examples": {
+                                "validar": {
+                                    "value": {
+                                        "nome": "true"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "sucess",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses1": {
+                    "204": {
+                        "description": "not-found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/validar-admA": {
+            "post": {
+                "summary": "Validar adm",
+                "description": "Verifica se existe uma entrada no id definido",
+                "tags": [
+                    "Login"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Validar"
+                            },
+                            "examples": {
+                                "validar": {
+                                    "value": {
+                                        "nome": "true"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "sucess",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses1": {
+                    "204": {
+                        "description": "not-found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/listar-candidatosA": {
+            "post": {
+                "summary": "Listar candidatos",
+                "description": "Retorna uma lista com todos candidatos",
+                "tags": [
+                    "Listar"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Listar"
+                            },
+                            "examples": {
+                                "validar": {
+                                    "value": {
+                                        "nome": "true"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "sucess",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses1": {
+                    "204": {
+                        "description": "not-found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/listar-responsavel": {
+            "post": {
+                "summary": "Listar responsavel",
+                "description": "Retorna uma lista com todos responsavel",
+                "tags": [
+                    "Listar"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Listar"
+                            },
+                            "examples": {
+                                "validar": {
+                                    "value": {
+                                        "nome": "true"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "sucess",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses1": {
+                    "204": {
+                        "description": "not-found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/listar-projetosA": {
+            "post": {
+                "summary": "Listar projetos",
+                "description": "Retorna uma lista com todos projetos",
+                "tags": [
+                    "Listar"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Listar"
+                            },
+                            "examples": {
+                                "validar": {
+                                    "value": {
+                                        "nome": "true"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "sucess",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses1": {
+                    "204": {
+                        "description": "not-found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/listar-todos-projetosA": {
+            "post": {
+                "summary": "Listar todos os projetos",
+                "description": "Retorna uma lista com todos os projetos",
+                "tags": [
+                    "Listar"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Listar"
+                            },
+                            "examples": {
+                                "validar": {
+                                    "value": {
+                                        "nome": "true"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "sucess",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses1": {
+                    "204": {
+                        "description": "not-found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/editar-candidatoA": {
+            "post": {
+                "summary": "Editar candidatos",
+                "description": "Edita o candidato informado",
+                "tags": [
+                    "Editado"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Editar"
+                            },
+                            "examples": {
+                                "validar": {
+                                    "value": {
+                                        "nome": "true"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "sucess",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses1": {
+                    "204": {
+                        "description": "not-found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/editar-responsavelA": {
+            "post": {
+                "summary": "Editar responsavel",
+                "description": "Edita o responsavel informado",
+                "tags": [
+                    "Editado"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Editar"
+                            },
+                            "examples": {
+                                "validar": {
+                                    "value": {
+                                        "nome": "true"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "sucess",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses1": {
+                    "204": {
+                        "description": "not-found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/editar-meuprojetoA": {
+            "post": {
+                "summary": "Editar o projeto",
+                "description": "Edita o projeto informado pelo responsavel",
+                "tags": [
+                    "Editado"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Editar"
+                            },
+                            "examples": {
+                                "validar": {
+                                    "value": {
+                                        "nome": "true"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "sucess",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses1": {
+                    "204": {
+                        "description": "not-found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/excluir-candidatoA": {
+            "post": {
+                "summary": "Excluir o candidato",
+                "description": "Exclui o candidato informado",
+                "tags": [
+                    "Excluir"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Excluir"
+                            },
+                            "examples": {
+                                "validar": {
+                                    "value": {
+                                        "nome": "true"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "sucess",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses1": {
+                    "204": {
+                        "description": "not-found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/excluir-responsavel": {
+            "post": {
+                "summary": "Excluir o responsavel",
+                "description": "Exclui o responsavel informado",
+                "tags": [
+                    "Excluir"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Excluir"
+                            },
+                            "examples": {
+                                "validar": {
+                                    "value": {
+                                        "nome": "true"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "sucess",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses1": {
+                    "204": {
+                        "description": "not-found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/excluir-meuprojetosA": {
+            "post": {
+                "summary": "Excluir o projeto",
+                "description": "Exclui o projeto informado pelo responsavel",
+                "tags": [
+                    "Excluir"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Excluir"
+                            },
+                            "examples": {
+                                "validar": {
+                                    "value": {
+                                        "nome": "true"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "sucess",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses1": {
+                    "204": {
+                        "description": "not-found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/cadastrar-candidatoA": {
+            "post": {
+                "summary": "Cadastrar o candidato",
+                "description": "Cadastrar o candidato informado pelo ADM",
+                "tags": [
+                    "Cadastrar"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Cadastrar"
+                            },
+                            "examples": {
+                                "validar": {
+                                    "value": {
+                                        "nome": "true"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "sucess",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses1": {
+                    "204": {
+                        "description": "not-found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/cadastrar-responsavelA": {
+            "post": {
+                "summary": "Cadastrar o responsavel",
+                "description": "Cadastrar o responsavel informado pelo ADM",
+                "tags": [
+                    "Cadastrar"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Cadastrar"
+                            },
+                            "examples": {
+                                "validar": {
+                                    "value": {
+                                        "nome": "true"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "sucess",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses1": {
+                    "204": {
+                        "description": "not-found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/cadastrar-projetosA": {
+            "post": {
+                "summary": "Cadastrar o projeto",
+                "description": "Cadastrar o projeto informado pelo Responsavel",
+                "tags": [
+                    "Cadastrar"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Cadastrar"
+                            },
+                            "examples": {
+                                "validar": {
+                                    "value": {
+                                        "nome": "true"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "sucess",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses1": {
+                    "204": {
+                        "description": "not-found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

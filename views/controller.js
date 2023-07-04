@@ -238,9 +238,9 @@ module.exports = {
         res.redirect("/responsavel/" + req.body.cpf_c)
     },
 
-    async getTelainteresse(req, res){
+    async getTelatimeinteresse(req, res){
         db.Projeto.findOne({where: {id: req.params.id}}).then((projeto) => {
-            res.render('interesse', {projeto: projeto.toJSON()});
+            res.render('definir-interesse', {projeto: projeto.toJSON()});
         });
     },
 
@@ -271,7 +271,7 @@ module.exports = {
 
     async getTelainteresse(req, res){
         db.Projeto.findOne({where: {id: req.params.id}}).then((projeto) => {
-            res.render('definir-interesse', {projeto: projeto.toJSON()});
+            res.render('interesse', {projeto: projeto.toJSON()});
         });
     },
 
@@ -281,6 +281,7 @@ module.exports = {
         projeto.participante2 = projeto.p2
         projeto.participante3 = projeto.p3
         await projeto.save();
+        res.redirect("http://localhost:8081/menu")
     },
 
 }

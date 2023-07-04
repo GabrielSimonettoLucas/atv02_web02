@@ -51,5 +51,5 @@ route.post("/post-cadastrar-projeto", controller.postCadastrarprojeto);
 route.get("/declararInteresse/:id", controller.getTelainteresse)
 route.post("/post-interesse", controller.postInteresse)
 
-route.get("/visualizarInteressados/:id", controller.getTelainteresse)
+route.get("/visualizarInteressados/:id", controller.getTelatimeinteresse)
 route.post("/post-time-interesse", controller.postTimeinteresse)

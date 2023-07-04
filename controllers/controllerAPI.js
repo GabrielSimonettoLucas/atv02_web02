@@ -26,15 +26,16 @@ module.exports = {
     },
     async getListcandidatos(req,res){ 
         var temp = await db.Candidato.findAll()
+        console.log("==============================")
         if (temp === null){
             return res.status(204).json();
         }
         return res.json({"data": {"status": "success", temp}})
-        console.log("==============================")
+        
     },
 
     async getListmeusprojetos(req,res){ 
-        var temp = await db.Projetos.findAll()
+        var temp = await db.Projeto.findAll()
         if (temp === null){
             return res.status(204).json();
         }
@@ -43,7 +44,7 @@ module.exports = {
     },
 
     async getListtodosprojetos(req,res){ 
-        var temp = await db.Projetos.findAll()
+        var temp = await db.Projeto.findAll()
         if (temp === null){
             return res.status(204).json();
         }
