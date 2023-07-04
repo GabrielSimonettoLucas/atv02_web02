@@ -1,0 +1,25 @@
+<div class="lista">
+    <h1>Lista de CANDIDATOS</h1>
+    <table border="10px">
+        <tr>
+            <td><b> CPF </b></td>
+            <td><b> Nome </b></td>
+            <td><b> Idade </b></td>
+            <td><b> Email </b></td>
+            <td><b> Editar </b></td>
+            <td><b> Excluir </b></td>
+        </tr>
+        {{#each responsavel}}
+        <tr>
+            <td>{{cpf}}</td>
+            <td>{{nome}}</td>
+            <td>{{idade}}</td>
+            <td>{{email}}</td>
+            <td><a href="editarResponsavel/{{id}}">Editar</a></td>
+            <td><a href="excluirResponsavel/{{id}}">Excluir</a></td>
+        </tr>
+        {{/each}}
+    </table>
+    <br><br><br><br>
+    <a href="http://localhost:8081/adm/90"><input type="button" value="VOLTAR"></a>
+</div>

@@ -1,0 +1,19 @@
+
+<form action="/post-excluir-responsavel" method="post">
+    <h1>Excluir RESPONSAVEL DE PROJETO</h1>
+    <input type="hidden" name="id" value="{{responsavel.id}}">
+    <p>CPF:</p>
+    <input type="text" name="cpf" value="{{responsavel.cpf}}" disabled> <br>
+    <p>Nome:</p> 
+    <input accept="false" type="text" name="nome" value="{{responsavel.nome}}" disabled>
+    <br><br>
+    <p>Idade:</p> 
+    <input accept="false" type="text" name="idade" value="{{responsavel.idade}}" disabled>
+    <br><br>
+    <p>Email:</p> 
+    <input accept="false" type="text" name="nome" value="{{responsavel.email}}" disabled>
+    <br><br>
+    <p>Tem certeza que deseja excluir o candidato?</p>
+    <input type="submit" value="Excluir">
+    <a href="/listar-candidatos"><input type="button" value="Cancelar"></a>
+</form>

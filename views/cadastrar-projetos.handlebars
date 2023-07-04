@@ -1,0 +1,10 @@
+<form action="/post-cadastrar-projeto" method="post">
+    <h1>Cadastro de PROJETO</h1>
+    <p>Descrição:</p>
+    <input type="text" name="descricao" placeholder="DESCRIÇÃO">
+    <br><br>
+    <input type="hidden" name="cpf_c" value="{{responsavel.cpf}}">
+    <input type="hidden" name="nome_c" value="{{responsavel.nome}}">
+    <input type="submit" value="Cadastrar">
+    <a href=""><input type="button" value="VOLTAR"></a>
+</form>

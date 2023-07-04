@@ -2,19 +2,24 @@
     <h1>Lista de CANDIDATOS</h1>
     <table border="10px">
         <tr>
-            <td><b> RA </b></td>
+            <td><b> ID </b></td>
             <td><b> Nome </b></td>
+            <td><b> Idade </b></td>
+            <td><b> Email </b></td>
             <td><b> Editar </b></td>
             <td><b> Excluir </b></td>
         </tr>
         {{#each candidato}}
         <tr>
-            <td>{{ra}}</td>
+            <td>{{cpf}}</td>
             <td>{{nome}}</td>
-            <td><a href="editarCandidato/{{ra}}">Editar</a></td>
-            <td><a href="excluirCandidato/{{ra}}">Excluir</a></td>
+            <td>{{idade}}</td>
+            <td>{{email}}</td>
+            <td><a href="editarCandidato/{{id}}">Editar</a></td>
+            <td><a href="excluirCandidato/{{id}}">Excluir</a></td>
         </tr>
         {{/each}}
     </table>
     <br><br><br><br>
+    <a href="http://localhost:8081/adm/90"><input type="button" value="VOLTAR"></a>
 </div>

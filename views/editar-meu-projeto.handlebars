@@ -1,0 +1,14 @@
+<form action="/post-edit-meu-projeto" method="post">
+    <h1>Edição de PROJETO</h1>
+    <input type="hidden" name="id" value="{{projeto.id}}">
+    <input type="hidden" name="cpf_c" value="{{projeto.cpf_criador}}">
+    <p>Participante 1:</p> 
+    <input type="text" name="participante1" value="{{projeto.participante1}}"> <br>
+    <p>Participante 2:</p> 
+    <input type="text" name="participante2" value="{{projeto.participante2}}"> <br>
+    <p>Participante 3:</p> 
+    <input type="text" name="participante3" value="{{projeto.participante3}}"> <br>
+    <p>Musica:</p> 
+    <input type="text" name="descricao" value="{{projeto.descricao}}"> <br>
+    <input type="submit" value="Editar">
+</form>

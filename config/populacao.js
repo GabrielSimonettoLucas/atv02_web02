@@ -1,6 +1,7 @@
 const db = require('./db');
 
 function popular_db(){
+    /*
     db.Ouvinte.create({
         ra: 100,
         nome: 'Pedro',
@@ -61,69 +62,33 @@ function popular_db(){
         ra: 6000,
         nome: 'Igor',
     })
+    */
     db.Candidato.create({
-        ra: 6000,
-        nome: 'Igor'
+        cpf: 1,
+        nome: 'Igor',
+        idade: 1,
+        email: 'teste',
+        projetointeressado_id: 0
     })
+
     db.Candidato.create({
-        ra: 7000,
-        nome: 'Sherek',
+        cpf: 2,
+        nome: 'Igor',
+        idade: 1,
+        email: 'teste',
+        projetointeressado_id: 0
     })
+
     db.Candidato.create({
-        ra: 8000,
-        nome: 'Fiona',
+        cpf: 3,
+        nome: 'Igor',
+        idade: 1,
+        email: 'teste',
+        projetointeressado_id: 0
     })
-    db.Candidato.create({
-        ra: 600,
-        nome: 'Sergio'
-    })
-    db.Candidato.create({
-        ra: 300,
-        nome: 'Amilton'
-    })
-    db.Candidato.create({
-        ra: 100,
-        nome: 'Pedro'
-    })
+
     db.Adm.create({
-        ra: 9999999,
-    })
-
-    db.Apresentacao.create({
-        ra_criador: 100,
-        nome_criador: 'Pedro',
-        participante1: 'Pedro',
-        musica: 'Mein Herz Brennt',
-        votos: 15,
-    })
-
-    db.Apresentacao.create({
-        ra_criador: 100,
-        nome_criador: 'Pedro',
-        participante1: 'Pedro',
-        musica: 'Sonne',
-        votos: 10,
-    })
-
-    db.Apresentacao.create({
-        ra_criador: 100,
-        nome_criador: 'Pedro',
-        participante1: 'Pedro',
-        musica: 'Dutchland',
-        votos: 11,
-    })
-
-    db.Apresentacao.create({
-        ra_criador: 200,
-        nome_criador: 'Julia',
-        participante1: 'Julia',
-        musica: 'Nothing Else Matters',
-        votos: 13,
-    })
-
-    db.Periodovotacao.create({
-        identificador: 3,
-        periodofotacaoiniciado: false,
+        id: 90,
     })
 }
 

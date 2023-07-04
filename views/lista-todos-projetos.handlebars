@@ -1,0 +1,26 @@
+<div class="lista">
+    <h1>Lista dos MEUS PROJETOS</h1>
+    <table border="10px">
+        <tr>
+            <td><b> Nome do criador </b></td>
+            <td><b> Participante 1 </b></td>
+            <td><b> Participante 2 </b></td>
+            <td><b> Participante 3 </b></td>
+            <td><b> Descrição </b></td>
+            <td><b> Visualizar interessados </b></td>
+            <td><b> Tenho Interesse </b></td>
+        </tr>
+        {{#each projetos}}
+        <tr>
+            <td>{{nome_criador}}</td>
+            <td>{{participante1}}</td>
+            <td>{{participante2}}</td>
+            <td>{{participante3}}</td>
+            <td>{{descricao}}</td>
+            <td>{{interessados}}</td>
+            <td><a href="/declararInteresse/{{id}}">Interesse</a></td>
+        </tr>
+        {{/each}}
+    </table>
+    <br><br><br><br>
+</div>

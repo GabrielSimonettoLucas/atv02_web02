@@ -1,8 +1,9 @@
 module.exports = (sequelize, Sequelize) => {
     const Adm = sequelize.define('adm',{
-        ra: {
+        id: {
             type: Sequelize.INTEGER,
-            allowNull: false, unique: true
+            allowNull: false, unique: true,
+            primaryKey: true
         }
     });
     return Adm;

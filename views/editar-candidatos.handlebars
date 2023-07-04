@@ -1,10 +1,14 @@
 <form action="/post-edit-candidatos" method="post">
     <h1>Edição de CANDIDATO</h1>
-    <input type="hidden" name="id" value="{{candidato.ra}}">
+    <input type="hidden" name="id" value="{{candidato.id}}">
     <p>RA:</p>
-    <input type="text" name="ra" value="{{candidato.ra}}"> <br>
+    <input type="text" name="cpf" value="{{candidato.cpf}}"> <br>
     <p>Nome:</p> 
     <input type="text" name="nome" value="{{candidato.nome}}">
+    <br><br>
+    <input type="text" name="idade" value="{{candidato.idade}}">
+    <br><br>
+    <input type="text" name="email" value="{{candidato.email}}">
     <br><br>
     <input type="submit" value="Editar">
 </form>

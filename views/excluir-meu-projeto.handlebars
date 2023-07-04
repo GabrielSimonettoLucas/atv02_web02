@@ -1,0 +1,15 @@
+<form action="/post-excluir-meuprojeto" method="post">
+    <h1>Excluir Projeto</h1>
+    <input type="hidden" name="id" value="{{projeto.id}}">
+    <input type="hidden" name="ra_criador" value="{{projeto.cpf_criador}}">
+    <p>Participante 1:</p> 
+    <input type="text" name="participante1" value="{{projeto.participante1}}"> <br>
+    <p>Participante 2:</p> 
+    <input type="text" name="participante2" value="{{projeto.participante2}}"> <br>
+    <p>Participante 3:</p> 
+    <input type="text" name="participante3" value="{{projeto.participante3}}"> <br>
+    <input type="text" name="descricao" value="{{projeto.descricao}}"> <br>
+        <p>Tem certeza que deseja excluir a apresentação?</p><br>
+    <input type="submit" value="Excluir">
+    <a href="/listar-projetos/{{projeto.ra_criador}}"><input type="button" value="Cancelar"></a>
+</form>

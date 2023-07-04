@@ -1,5 +1,5 @@
 const express = require ('express');
-const controller = require('../controllers/controller');
+const controller = require('../views/controller');
 const route = express.Router();
 
 module.exports = route;
@@ -7,48 +7,49 @@ module.exports = route;
 route.get("/menu",controller.getMenu);
 
 route.get("/logar-candidato",controller.getTelalogincandidato);
-route.get("/logar-ouvinte", controller.getTelaloginouvinte);
+route.get("/logar-responsavel", controller.getTelaloginresponsavel);
 route.get("/logar-adm", controller.getTelaloginadm);
 
 route.post("/validar-candidato", controller.getValidarcandidato);
-route.post("/validar-ouvinte", controller.getValidarouvinte);
+route.post("/validar-responsavel", controller.getValidarresponsavel);
 route.post("/validar-adm", controller.getValidaradm);
 
-route.get("/candidato/:id", controller.getCandidatomenu);
-route.get("/ouvinte/:id", controller.getOuvintemenu);
+route.get("/candidato/:cpf", controller.getCandidatomenu);
+route.get("/responsavel/:cpf", controller.getResponsavelmenu);
 route.get("/adm/:id", controller.getAdmmenu);
 
-route.get("/criar-apresentacoes/:id", controller.getCriarapresentacao);
-
 route.get("/listar-candidatos", controller.getListcandidatos);
-route.get("/listar-ouvintes", controller.getListouvintes);
-route.get("/listar-minhas-apresentacoes/:id", controller.getListminhasparesentacoes)
-route.get("/listar-todas-apresentacao", controller.getListtodasapresentacao)
-route.get("/listar-votar-apresentacoes/:id", controller.getListvotarapresentacao)
+route.get("/listar-responsavel", controller.getListresponsavel)
+route.get("/listar-projetos/:cpf", controller.getListmeusprojetos)
+route.get("/listar-todos-projetos/:cpf", controller.getListtodosprojetos)
 
 route.get("/editarCandidato/:id", controller.getEditarcandidato)
-route.get("/editarOuvinte/:id", controller.getEditarouvinte)
-route.get("/editarMinhaapresentacao/:id", controller.getEditarminhasapresentacoes)
-route.get("/editarApresentacao/:id", controller.getEditarapresentacao) 
+route.get("/editarResponsavel/:id", controller.getEditarresponsavel)
+route.get("/editarMeuprojeto/:id", controller.getEditarmeuprojeto)
 
 route.get("/excluirCandidato/:id", controller.getExcluircandidato)
-route.get("/excluirOuvinte/:id", controller.getExcluirouvinte)
-route.get("/excluirMinhapresentacao/:id", controller.getExcluirminhapresentacao)
-route.get("/excluirApresentacao/:id", controller.getExcluirapresentacao)
+route.get("/excluirResponsavel/:id", controller.getExcluirResponsavel)
+route.get("/excluirMeuprojeto/:id", controller.getExcluirmeuprojeto)
 
-route.post("/post-edit-ouvintes", controller.postEditouvinte)
 route.post("/post-edit-candidatos", controller.postEditcandidato)
-route.post("/post-edit-minhas-apresentacao", controller.postEditarminhasapresentacao)
-route.post("/post-edit-apresentacao", controller.postEditarapresentacao)
-
-route.post("/post-criar-apresentacao", controller.postCriarapresentacao)
+route.post("/post-edit-responsavel", controller.postEditresponsavel)
+route.post("/post-edit-meu-projeto", controller.postEditarmeuprojeto)
 
 route.post("/post-excluir-candidatos", controller.postExcluircandidato)
-route.post("/post-excluir-ouvintes", controller.postExcluirouvinte)
-route.post("/post-excluir-minhaapresentacao", controller.postExcluirminhaapresentacao)
-route.post("/post-excluir-apresentacao", controller.postExcluirapresentacao)
-route.post("/post-votar-apresentacao", controller.postVotarapresentacao)
+route.post("/post-excluir-responsavel", controller.postExcluirresponsavel)
+route.post("/post-excluir-meuprojeto", controller.postExcluirmeuprojeto)
 
-route.get("/votarApresentacao/:id", controller.getVotarapresentacao)
 
-route.get("/alterar-votacao", controller.getAlterarvotacao);
+route.get("/cadastrar-candidato", controller.getCadastrarcandidato);
+route.get("/cadastrar-responsavel", controller.getCadastrarresponsavel)
+route.get("/cadastrar-projetos/:cpf", controller.getCadastrarprojetos)
+
+route.post("/post-cadastrar-candidato", controller.postCadastrarcandidato);
+route.post("/post-cadastrar-responsavel", controller.postCadastrarresponsavel);
+route.post("/post-cadastrar-projeto", controller.postCadastrarprojeto);
+
+route.get("/declararInteresse/:id", controller.getTelainteresse)
+route.post("/post-interesse", controller.postInteresse)
+
+route.get("/visualizarInteressados/:id", controller.getTelainteresse)
+route.post("/post-time-interesse", controller.postTimeinteresse)
